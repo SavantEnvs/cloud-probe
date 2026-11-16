@@ -1,0 +1,10 @@
+project: savantenvs/cloud-probe
+target: fuzz_req_pattern
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_req_pattern/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_req_pattern
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_req_pattern/fuzz_req_pattern.dict

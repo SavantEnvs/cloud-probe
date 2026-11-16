@@ -1,0 +1,26 @@
+{
+    "tasks": [
+        {
+            "req_pattern": {
+                "type": "auto"
+            },
+            "capturer": {
+                "type": "libpcap",
+                "libpcap": {
+                    "interface": "eth0",
+                    "snaplen": 2048,
+                    "buffer_size_mb": 256
+                }
+            },
+            "outputs": [
+                {
+                    "type": "file",
+                    "rate_limit_mbps": 10,
+                    "file": {
+                        "name": "test_libpcap.pcap"
+                    }
+                }
+            ]
+        }
+    ]
+}

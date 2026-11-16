@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "req_pattern": {
+                "type": "auto"
+            },
+            "capturer": {
+                "type": "libpcap",
+                "libpcap": {
+                    "interface": "eth0",
+                    "snaplen": 2048,
+                    "buffer_size_mb": 256
+                }
+            },
+            "outputs": [
+                {
+                    "type": "zmq",
+                    "rate_limit_mbps": 10,
+                    "zmq": {
+                        "host": "127.0.0.1",
+                        "port": 5555,
+                        "hwm": 1000,
+                        "uuid": "796d506a-46a1-4f4e-bd9a-6075a49ac9f8"
+                    }
+                }
+            ]
+        }
+    ]
+}

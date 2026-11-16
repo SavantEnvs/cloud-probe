@@ -1,0 +1,9 @@
+project: savantenvs/cloud-probe
+target: fuzz_packet_split
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_packet_split/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_packet_split
+    libfuzzer: true
+    timeout: 30
